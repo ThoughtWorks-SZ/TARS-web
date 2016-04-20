@@ -1,5 +1,5 @@
 import React from 'react';
-import StyleGuide from './style-guide';
+import StyleGuide from './StyleGuide';
 
 export default {
 

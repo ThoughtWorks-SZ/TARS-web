@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './style-guide.scss';
+import s from './StyleGuide.scss';
 
 const title = 'Style Guide';
 
@@ -9,7 +9,7 @@ function StyleGuide(props, context) {
   return (
     <div className={s.root}>
       <div className={s.container}>
-        <h1>Style Guide</h1>
+        <h1>{title}</h1>
         <p>...</p>
       </div>
     </div>
