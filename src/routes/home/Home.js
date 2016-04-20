@@ -14,10 +14,10 @@ import s from './Home.scss';
 
 const title = 'React Starter Kit';
 
-function Home({ columnNames, columnData }, context) {
+function Home({}, context) {
   context.setTitle(title);
   return (
-    <Tabs columnNames={columnNames} columnData={columnData} />
+    <Tabs tabs={['全部','未发布','已发布']} data={['全部','未发布','已发布']}/>
   );
 }
 
@@ -30,6 +30,6 @@ Home.propTypes = {
     operation: PropTypes.string,
   })).isRequired,
 };
-Home.contextTypes = { setTitle: PropTypes.func.isRequired };
+Home.contextTypes = {setTitle: PropTypes.func.isRequired};
 
 export default withStyles(s)(Home);
