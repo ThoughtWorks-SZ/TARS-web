@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Textbox.jsx.scss';
-
-let { Component } = React;
+//import s from './Textbox.scss';
 
 class Textbox extends Component {
 
@@ -17,7 +15,8 @@ class Textbox extends Component {
   }
 }
 
-export default withStyles(s)(Textbox);
+export default (Textbox);
+//export default withStyles(s)(Textbox);
 
 
 
