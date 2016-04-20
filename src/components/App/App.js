@@ -53,6 +53,7 @@ class App extends Component {
   render() {
     return !this.props.error ? (
       <div>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
         <Header />
         {this.props.children}
         <Feedback />

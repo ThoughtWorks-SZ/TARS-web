@@ -17,6 +17,7 @@ import login from './login';
 import register from './register';
 import content from './content';
 import error from './error';
+import styleGuide from './style-guide';
 
 export default {
 
@@ -29,6 +30,7 @@ export default {
     register,
     content,
     error,
+    styleGuide,
   ],
 
   async action({ next, render, context }) {
