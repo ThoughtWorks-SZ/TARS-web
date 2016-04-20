@@ -1,17 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Checkbox.scss';
-
-let { Component } = React;
+//import s from './Checkbox.scss';
 
 class Checkbox extends Component {
 
   render() {
     return (
-      <input name="" type="checkbox" value="">{this.props.checkboxLabel}</input>
+      <label><input name="" type="checkbox" value=""></input>{this.props.checkboxLabel}</label>
     );
   }
 }
 
-export default withStyles(s)(Checkbox);
+export default (Checkbox);
+//export default withStyles(s)(Checkbox);
 
