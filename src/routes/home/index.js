@@ -47,7 +47,7 @@ export default {
       lastModifyData: '2016-04-21',
       status: '已发布',
       operation: ['复制', '查看'],
-    }];
+    }]; // jscs:disable
 
     return <Home columnNames={columnNames} columnData={columnData} />;
   },

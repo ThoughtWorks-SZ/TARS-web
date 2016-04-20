@@ -14,6 +14,8 @@ import Header from '../Header';
 import Feedback from '../Feedback';
 import Footer from '../Footer';
 
+const bootstrapUrl = 'https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css';
+
 class App extends Component {
 
   static propTypes = {
@@ -53,7 +55,7 @@ class App extends Component {
   render() {
     return !this.props.error ? (
       <div>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
+        <link rel="stylesheet" href={bootstrapUrl} />
         <Header />
         {this.props.children}
         <Feedback />

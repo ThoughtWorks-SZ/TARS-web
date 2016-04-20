@@ -17,6 +17,7 @@ function Button({ buttonType, buttonText }) {
     buttonToDisplay = (<button type="button" className={s.defaultButton} disabled="true">
       {buttonText}</button>);
   }
+
   return (
     <div>
       {buttonToDisplay}

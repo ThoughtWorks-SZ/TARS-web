@@ -14,6 +14,7 @@ function getProps(data) {
       props.push(data[key]);
     }
   }
+
   return props;
 }
 
@@ -27,7 +28,6 @@ function getColumnData(columnData) {
     </tr>
   ));
 }
-
 
 function Table({ columnNames, columnData }) {
   return (
@@ -43,7 +43,6 @@ function Table({ columnNames, columnData }) {
     </ReactTable>
   );
 }
-
 
 Table.propTypes = {
   columnNames: PropTypes.array,

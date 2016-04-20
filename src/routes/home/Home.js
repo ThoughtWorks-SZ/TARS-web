@@ -14,7 +14,6 @@ import s from './Home.scss';
 
 const title = 'React Starter Kit';
 
-
 function Home({ columnNames, columnData }, context) {
   context.setTitle(title);
   return (

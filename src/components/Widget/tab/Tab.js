@@ -15,7 +15,6 @@ function Tab({ columnNames, columnData }) {
   );
 }
 
-
 Tab.propTypes = {
   columnNames: PropTypes.array,
   columnData: PropTypes.arrayOf(PropTypes.shape({
