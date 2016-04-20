@@ -29,7 +29,27 @@ export default {
     });
     const { data } = await resp.json();
     if (!data || !data.news) throw new Error('Failed to load the news feed.');
-    return <Home news={data.news} />;
+
+    const columnNames = ['#', '名称', '最后修改时间', '状态', '操作'];
+
+    const columnData = [{
+      name: '2016春季西南地区校招笔试题模板',
+      lastModifyData: '2016-04-03',
+      status: '未发布',
+      operation: ['发布', '编辑', '查看', '删除'],
+    }, {
+      name: '2016春季西南地区校招笔试题模板',
+      lastModifyData: '2016-04-12',
+      status: '已发布',
+      operation: ['复制', '查看'],
+    }, {
+      name: '2016春季西南地区校招笔试题模板',
+      lastModifyData: '2016-04-21',
+      status: '已发布',
+      operation: ['复制', '查看'],
+    }];
+
+    return <Home columnNames={columnNames} columnData={columnData} />;
   },
 
 };
