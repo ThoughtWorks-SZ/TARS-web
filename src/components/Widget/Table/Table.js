@@ -2,13 +2,8 @@ import React, { PropTypes } from 'react';
 import ReactTable from '../../../../node_modules/react-bootstrap/lib/Table';
 
 function getTableHeader(tableHeaders) {
-  if (tableHeaders === undefined) {
-    return;
-  }
-  return tableHeaders.map((header) => (
-    <th>{header}</th>
-  ));
-
+  return tableHeaders === undefined ?
+    undefined : tableHeaders.map((header) => (<th>{header}</th>));
 }
 
 function getProps(data) {
@@ -23,18 +18,16 @@ function getProps(data) {
 }
 
 function getTableData(tableData) {
-  if (tableData === undefined) {
-    return;
-  }
-  return tableData.map((item, index) => (
-    <tr>
-      <td>{index}</td>
-      {getProps(item).map((data) => (
-        <td>{data}</td>
-      ))}
-    </tr>
-  ));
-
+  return tableData === undefined ?
+    undefined :
+    tableData.map((item, index) => (
+      <tr>
+        <td>{index}</td>
+        {getProps(item).map((data) => (
+          <td>{data}</td>
+        ))}
+      </tr>
+    ));
 }
 
 function Table({ headers, data }) {
