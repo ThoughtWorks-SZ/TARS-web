@@ -9,7 +9,7 @@
 
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import Tab from '../../components/Widget/Tab/Tab';
+import Tabs from '../../components/Widget/Tabs/Tabs';
 import s from './Home.scss';
 
 const title = 'React Starter Kit';
@@ -17,7 +17,7 @@ const title = 'React Starter Kit';
 function Home({ columnNames, columnData }, context) {
   context.setTitle(title);
   return (
-    <Tab columnNames={columnNames} columnData={columnData} />
+    <Tabs columnNames={columnNames} columnData={columnData} />
   );
 }
 

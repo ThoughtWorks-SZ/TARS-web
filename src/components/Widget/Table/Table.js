@@ -1,10 +1,14 @@
 import React, { PropTypes } from 'react';
 import ReactTable from '../../../../node_modules/react-bootstrap/lib/Table';
 
-function getColumnHeader(columnNames) {
-  return columnNames.map((name) => (
-    <th>{name}</th>
+function getTableHeader(tableHeaders) {
+  if (tableHeaders === undefined) {
+    return;
+  }
+  return tableHeaders.map((header) => (
+    <th>{header}</th>
   ));
+
 }
 
 function getProps(data) {
@@ -18,8 +22,11 @@ function getProps(data) {
   return props;
 }
 
-function getColumnData(columnData) {
-  return columnData.map((item, index) => (
+function getTableData(tableData) {
+  if (tableData === undefined) {
+    return;
+  }
+  return tableData.map((item, index) => (
     <tr>
       <td>{index}</td>
       {getProps(item).map((data) => (
@@ -27,30 +34,31 @@ function getColumnData(columnData) {
       ))}
     </tr>
   ));
+
 }
 
-function Table({ columnNames, columnData }) {
+function Table({ headers, data }) {
   return (
     <ReactTable striped bordered hover>
       <thead>
       <tr>
-        {getColumnHeader(columnNames)}
+        {getTableHeader(headers)}
       </tr>
       </thead>
       <tbody>
-      {getColumnData(columnData)}
+      {getTableData(data)}
       </tbody>
     </ReactTable>
   );
 }
 
 Table.propTypes = {
-  columnNames: PropTypes.array,
-  columnData: PropTypes.arrayOf(PropTypes.shape({
+  headers: PropTypes.array.isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     lastModifyData: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
-    operation: PropTypes.string.isRequired,
+    operation: PropTypes.array.isRequired,
   })).isRequired,
 };
 
