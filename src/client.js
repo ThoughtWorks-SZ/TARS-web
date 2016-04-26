@@ -14,6 +14,7 @@ import { match } from 'universal-router';
 import routes from './routes';
 import history from './core/history';
 import { addEventListener, removeEventListener } from './core/DOMUtils';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const context = {
   insertCss: styles => styles._insertCss(),
