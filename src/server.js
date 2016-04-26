@@ -24,14 +24,14 @@ import schema from './data/schema';
 import routes from './routes';
 import assets from './assets';
 import mongoose from 'mongoose';
-import LogicTemplates from './data/queries/LogicTemplates';
-import LogicQuestionRepos from './data/queries/LogicQuestionRepos';
-import LogicQuestionRules from './data/queries/LogicQuestionRules';
 
 import { port, auth, analytics } from './config';
 
 const app = express();
-mongoose.connect('mongodb://127.0.0.1:27017/test');
+
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect('mongodb://127.0.0.1:27017/test');
+}
 
 //
 // Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
@@ -82,18 +82,6 @@ app.use('/graphql', expressGraphQL(req => ({
   rootValue: { request: req },
   pretty: process.env.NODE_ENV !== 'production',
 })));
-
-//
-// Register Rest API
-// -----------------------------------------------------------------------------
-app.get('/logic/templates', LogicTemplates.find);
-app.post('/logic/templates', LogicTemplates.add);
-
-app.get('/logic/repos', LogicQuestionRepos.find);
-app.post('/logic/repos', LogicQuestionRepos.add);
-
-app.get('/logic/rules', LogicQuestionRules.find);
-app.post('/logic/rules', LogicQuestionRules.add);
 
 //
 // Register server-side rendering middleware

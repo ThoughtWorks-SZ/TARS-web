@@ -1,19 +1,22 @@
-import LogicTemplate from '../schema/LogicTemplate';
+/**
+ * React Starter Kit (https://www.reactstarterkit.com/)
+ *
+ * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
 
-exports.find = (req, res) => {
-  LogicTemplate.find({}, (err, obj) => {
-    res.send(obj);
-  });
+import { GraphQLList as List } from 'graphql';
+import fetch from '../../core/fetch';
+import LogicTemplateType from '../types/LogicTemplateType';
+import LogicTemplate from '../mongo/models/LogicTemplate';
+
+const logicTemplates = {
+  type: new List(LogicTemplateType),
+  resolve() {
+    return LogicTemplate.find();
+  },
 };
 
-exports.add = (req, res) => {
-  const template = new LogicTemplate({});
-
-  template.save((err) => {
-    if (err) {
-      res.send({ success: false, error: err });
-    } else {
-      res.send({ success: true });
-    }
-  });
-};
+export default logicTemplates;
