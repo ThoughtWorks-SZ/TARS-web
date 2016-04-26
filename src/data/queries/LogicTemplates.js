@@ -8,7 +8,6 @@
  */
 
 import { GraphQLList as List } from 'graphql';
-import fetch from '../../core/fetch';
 import LogicTemplateType from '../types/LogicTemplateType';
 import LogicTemplate from '../mongo/models/LogicTemplate';
 

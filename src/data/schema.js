@@ -15,7 +15,7 @@ import {
 import me from './queries/me';
 import content from './queries/content';
 import news from './queries/news';
-import logicTemplate from './queries/logicTemplates'
+import logicTemplate from './queries/logicTemplates';
 
 const schema = new Schema({
   query: new ObjectType({
