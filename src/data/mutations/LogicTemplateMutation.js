@@ -1,21 +1,29 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
+import {
+  GraphQLID as ID,
+} from 'graphql';
 
-import { GraphQLList as List } from 'graphql';
 import LogicTemplateType from '../types/LogicTemplateType';
 import LogicTemplate from '../mongo/models/LogicTemplate';
 
-const logicTemplates = {
-  type: new List(LogicTemplateType),
-  resolve() {
-    return LogicTemplate.find();
+const LogicTemplateMutation = {
+  addLogicTemplate: {
+    type: LogicTemplateType,
+    resolve() {
+      const template = new LogicTemplate({});
+      return template.save();
+    },
+  },
+  deleteLogicTemplate: {
+    type: LogicTemplateType,
+    args: {
+      id: {
+        type: ID,
+      },
+    },
+    resolve(root, { id }) {
+      return LogicTemplate.findByIdAndRemove(id);
+    },
   },
 };
 
-export default logicTemplates;
+export default LogicTemplateMutation;

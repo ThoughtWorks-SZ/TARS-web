@@ -17,7 +17,7 @@ const LogicTemplateQuery = {
     resolve() {
       return LogicTemplate.find();
     },
-  }
+  },
 };
 
 export default LogicTemplateQuery;

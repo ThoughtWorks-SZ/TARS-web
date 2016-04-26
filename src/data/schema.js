@@ -15,8 +15,8 @@ import {
 import me from './queries/me';
 import content from './queries/content';
 import news from './queries/news';
-import logicTemplateQuery from './queries/LogicTemplateQuery';
-import logicTemplateMutation from './mutations/LogicTemplateMutation';
+import LogicTemplateQuery from './queries/LogicTemplateQuery';
+import LogicTemplateMutation from './mutations/LogicTemplateMutation';
 
 const schema = new Schema({
   query: new ObjectType({
@@ -25,7 +25,14 @@ const schema = new Schema({
       me,
       content,
       news,
-      logicTemplates: logicTemplateQuery.logicTemplates,
+      logicTemplates: LogicTemplateQuery.logicTemplates,
+    },
+  }),
+  mutation: new ObjectType({
+    name: 'Mutation',
+    fields: {
+      addLogicTemplate: LogicTemplateMutation.addLogicTemplate,
+      deleteLogicTemplate: LogicTemplateMutation.deleteLogicTemplate,
     },
   }),
 });
