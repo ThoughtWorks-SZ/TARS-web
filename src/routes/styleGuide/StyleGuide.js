@@ -7,6 +7,7 @@ import Button from '../../components/Widget/Button/Button';
 import Checkbox from '../../components/Widget/Checkbox';
 import Dropdown from '../../components/Widget/Dropdown';
 import Textbox from '../../components/Widget/Textbox';
+import Popup from '../../components/Widget/Popup/Popup';
 
 const title = 'Style Guide';
 const tableHeaders = ['#', '名称', '最后修改时间', '状态', '操作'];
@@ -48,7 +49,10 @@ function StyleGuide(props, context) {
       {/* ----- Button ----- */}
       <div>
         <h2>Button</h2>
-        <Button buttonType="primary" buttonText="this is button" />
+        <Button buttonType="primary" buttonText="this is a primary button" />
+        <Button buttonType="warning" buttonText="this is a warning button" />
+        <Button buttonType="info" buttonText="this is a info button" />
+        <Button buttonType="default" buttonText="this is a default button" />
       </div>
 
       {/* ----- Checkbox ----- */}
@@ -66,6 +70,7 @@ function StyleGuide(props, context) {
       {/* ----- Popup ----- */}
       <div>
         <h2>Popup</h2>
+        <Popup error="true" message="答案提交后将不能修改!" buttons={['取消', '确认提交']} />
       </div>
 
       {/* ----- Textbox ----- */}
